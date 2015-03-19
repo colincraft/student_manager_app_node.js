@@ -1,0 +1,20 @@
+<h1>Students</h1>
+<% students.forEach(function(student){ %>
+<p><%= student %>
+<form action="/remove/<%= student %>?_method=DELETE" method="POST">
+<input type="submit" name="destroy" value="remove student">
+</form>
+</p>
+<% }); %>
+
+<form action="/create" method="POST">
+  <label for="student">Student: </label>
+  <input type="text" name="student" id="student" autofocus required>
+  <input type="submit">
+</form>
+
+<p>
+<form action="/remove/students/?_method=DELETE" method="POST">
+<input type="submit" name="destroy" value="remove all students">
+</form>
+</p>
